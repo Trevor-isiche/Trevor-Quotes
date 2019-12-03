@@ -3,8 +3,12 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { QuoteComponent } from './quote/quote.component';
+import { QuoteDetailsComponent} from './quote-details/quote-details.component'
+
 import { QuoteFormsComponent } from './quote-forms/quote-forms.component';
-import { QuoteDetailsComponent } from './quote-details/quote-details.component';
+import { DateCountPipe } from './date-count.pipe';
+
+
 
 
 
@@ -13,7 +17,11 @@ import { QuoteDetailsComponent } from './quote-details/quote-details.component';
     AppComponent,
     QuoteComponent,
     QuoteFormsComponent,
+    
     QuoteDetailsComponent,
+    
+    DateCountPipe,
+
   ],
   imports: [
     BrowserModule,
