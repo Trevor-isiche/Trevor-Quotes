@@ -1,4 +1,4 @@
-<link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+
 
 <h1 class="quotesheader">My Quotes</h1>
 
@@ -6,11 +6,16 @@
 
 <div style="margin-left: 15px;" class="content">
   <div class="row">
-    <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
+    <app-quote-forms (newQuote)="addNewQuote($event)"></app-quote-forms>
   </div>
 
-  <div *ngFor-='let quote of Quotes';let i = index'>
-        <h3 style="font-family: 'Jura', sans-serif;" id="{{i}}" appStrikethrough><strong>{{quote.name}}</strong> submitted on: {{quote.completeDate|date|uppercase}}</h3>
+  <div *ngFor='let quote of quotes;let i = index'>
+        <h3 id="{{i}}" appStrikethrough><strong>{{quote.name}}</strong> submitted on: {{quote.completeDate}}</h3>
+        <app-quote-details [quote]='quote'></app-quote-details>
+        <div style="width: 20%;">
+            <a href="#" class="btn btn-sm animated-button victoria-one" (click)='quoteDelete(i)'>Delete Quote</a>
+          </div>
+      </div>
 
 
 
