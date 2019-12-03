@@ -17,6 +17,15 @@ import {Quote} from '../quote'
       toogleDetails(index){
         this.quotes[index].showDescription =!this.quotes[index].showDescription;
     };
+
+    addNewQuote(quote:any){
+      this.quotes.push(quote);
+
+    }
+    quoteDelete(index){
+      this.quotes.splice(index,1);
+
+    }
   ngOnInit(){
 
 }
